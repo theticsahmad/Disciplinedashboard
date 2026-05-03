@@ -1,10 +1,14 @@
 *{
     background-color: black;
     font-family: sans-serif;
-}
+    
+    
+ }
 body{
     margin: 0;
     padding: 0;
+    overflow: hidden;
+    width: 100vw;
 }
 ul{
    list-style-type: none;
@@ -14,6 +18,7 @@ ul{
    background-color: darkgrey;
    position: sticky;
    top: 0;
+   
 }
 ul li{
     float: left;
@@ -38,15 +43,20 @@ h1{
     color: crimson;
     font-family: monospace;
     font: bold;
-    position: absolute; left: 5in; top: 110px;
-    
-   
+    position: absolute; left: 4.2in; top: 110px;
+}
+.ty{
+    font-size: 30px;
+    color: crimson;
+    font-family: 'Times New Roman', Times, serif;
+    font: bold;
+    margin-bottom: 10px;
+    position: absolute; left: 4.4in; top: 410px;
 }
 #laid{
-    height: 100vh;
-    position: absolute; left: 7.8in; top: 16vh;
-    width: 100vh;
-    ;
+    height: 90vh;
+    position: absolute; left: 7.82in; top: 11vh;
+    width: 110vh;
 }
 .container {
   position: relative;
@@ -58,4 +68,7 @@ h1{
   top: 8px;
   left: 16px;
 
+}
+.hungry{
+    color: cadetblue;
 }
