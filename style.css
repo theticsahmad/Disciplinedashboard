@@ -34,18 +34,28 @@ ul li a.active{
 }
 
 h1{
-    font-size: 30px;
+    font-size: 60px;
     color: crimson;
     font-family: monospace;
     font: bold;
-    position: absolute; left: 7.5in;
+    position: absolute; left: 5in; top: 110px;
     
    
 }
 #laid{
     height: 100vh;
-    position: absolute; left: 8in; top: 16vh;
+    position: absolute; left: 7.8in; top: 16vh;
     width: 100vh;
     ;
 }
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.topl {
+  position: absolute;
+  top: 8px;
+  left: 16px;
 
+}
