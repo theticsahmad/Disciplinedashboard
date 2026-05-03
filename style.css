@@ -32,3 +32,19 @@ ul li a:hover{
 ul li a.active{
     background-color: crimson;
 }
+h1, .laid{
+    position: relative;
+}
+h1{
+    color: crimson;
+    font-family: monospace;
+    font: bold;
+    
+   
+}
+#laid{
+    height: 100vh;
+    position: absolulte; right: 20vh;
+    width: 100vh;
+}
+}
