@@ -4,19 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script>
-        let water = 0;
-
-function addWater() {
-  water += 1;
-  document.getElementById("waterText").innerText = water + "L";
-}
-
-function resetWater() {
-  water = 0;
-  document.getElementById("waterText").innerText = water + "L";
-}
-    </script>
+  
     <title>Discipline Dashboard</title>
 </head>
 <body>
@@ -31,29 +19,116 @@ function resetWater() {
     </navbar>
     
               
-    <section class="hero" id="hero">
+    <section class="hero" id="home">
    <div class="cont1">
      <img id="laid" src="da.png" alt="">
-    <div class="topl"><h1 >BUILT BY DISCIPLINE,
+    <div class="topl"><h1 class="mov" >BUILT BY DISCIPLINE,
     NOT MOTIVATION.</h1></div>
     <p class="ty" style="color: crimson;">Built for your progress and personal tracking
         <br> to help you be your best self. <br>
-        <br> <span class="hungry">Stay Hungry, Stay Blessed.</span>
+        <br><span class="hungry">Stay Hungry, Stay Blessed.</span>
     </p>
     </div>
     </section>
-    <hr style="color: azure; size: 200vh; position: absolute;top: 100vh;">
-    <section class="progress" id="progress">
     
+    <section class="progress" id="progress">
+        <hr style="color: azure;">
+        <h1 style="position: absolute; top: 20px;left: 35vh;">
+        Track your everyday <span class="fit">Fitness</span> with us!!
+        </h1>
+        <div class="card" id="waterCard">
+    <h3>💧 Water</h3>
+    <p id="waterText">0 L</p>
+    <p id="waterStatus">Not completed</p>
 
-        <div class="card">
-  <h3>Water</h3>
-  <p id="waterText">0L</p>
+    <button onclick="addWater()">+1L</button>
+    <button onclick="resetWater()">Reset</button>
+  </div>
 
-  <button onclick="addWater()">+1L</button>
-  <button onclick="resetWater()">Reset</button>
-    </div>
+ 
+  <div class="card" id="workout">
+    <h3>🏋 Workout</h3>
+    <h2>Strength Training, Running and any other workout acitivies maybe classified to be toggled </h2>
+    <p id="workoutText">Not done ❌</p>
 
+    <button onclick="toggleWorkout()">Toggle</button>
+  </div>
+
+</div>
+<div class="card" id="streakCard">
+  <h3>🔥 Streak</h3>
+  <p id="streakText">0 days</p>
+</div>
     </section>
 </body>
+  <script>
+    let streak = 0;
+let water = 0;
+let workoutDone = false;
+let goal = 3;
+
+function updateStreak() {
+  let waterOk = water >= goal;
+  let workoutOk = workoutDone;
+
+  let streakText = document.getElementById("streakText");
+  let streakCard = document.getElementById("streakCard");
+
+  if (waterOk && workoutOk) {
+    streak++;
+    streakText.innerText = streak + " days";
+    streakCard.classList.add("good");
+  } else {
+    streak = 0;
+    streakText.innerText = "0 days";
+    streakCard.classList.remove("good");
+  }
+}
+
+function addWater() {
+  water++;
+  document.getElementById("waterText").innerText = water + " L";
+  checkWater();
+  updateStreak();
+}
+
+function resetWater() {
+  water = 0;
+  document.getElementById("waterText").innerText = water + " L";
+  checkWater();
+  updateStreak();
+}
+
+function checkWater() {
+  let status = document.getElementById("waterStatus");
+  let card = document.getElementById("waterCard");
+
+  if (water >= goal) {
+    status.innerText = "Completed ✔";
+    status.style.color = "lime";
+    card.classList.add("good");
+  } else {
+    status.innerText = "Not completed";
+    status.style.color = "red";
+    card.classList.remove("good");
+  }
+}
+
+function toggleWorkout() {
+  workoutDone = !workoutDone;
+
+  let text = document.getElementById("workoutText");
+  let card = document.getElementById("workoutCard");
+
+  if (workoutDone) {
+    text.innerText = "Done ✔";
+    card.classList.add("good");
+  } else {
+    text.innerText = "Not done ❌";
+    card.classList.remove("good");
+  }
+
+  updateStreak();
+}
+    </script>
 </html>

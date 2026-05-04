@@ -5,6 +5,9 @@
     
  }
 body{
+    background: #0d0d0d;
+  color: white;
+  font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -38,7 +41,7 @@ ul li a.active{
     background-color: crimson;
 }
 
-h1{
+.mov{
     font-size: 60px;
     color: crimson;
     font-family: monospace;
@@ -72,7 +75,81 @@ h1{
 .hungry{
     color: cadetblue;
 }
+hr{
+    width: 100vw;
+    size: 10vh;
+}
 .progress{
     position: absolute;top: 8in;
-  color: aliceblue;
+  color: yellow;
+}
+.card{
+    position: absolute; top: 1in; left:42vh;
+}
+.fit{
+    color:crimson;
+}
+
+button{
+    color: pink;
+}
+.hydrate{
+    color: lightblue;
+}
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #0d0d0d;
+  color: white;
+}
+
+h2 {
+  text-align: center;
+  color: #00ff88;
+  margin-top: 20px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  padding: 20px;
+}
+
+.card {
+  background: #151515;
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px solid #222;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: #00ff88;
+  box-shadow: 0 0 15px rgba(0,255,136,0.2);
+}
+
+button {
+  margin: 5px;
+  padding: 8px 12px;
+  background: #222;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #00ff88;
+  color: black;
+}
+
+/* completed state */
+.good {
+  border-color: #00ff88;
+  box-shadow: 0 0 20px rgba(0,255,136,0.3);
+}
+#workout{
+    position: absolute;top: 50vh;
 }
