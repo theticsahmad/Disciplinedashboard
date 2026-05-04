@@ -4,6 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script>
+        let water = 0;
+
+function addWater() {
+  water += 1;
+  document.getElementById("waterText").innerText = water + "L";
+}
+
+function resetWater() {
+  water = 0;
+  document.getElementById("waterText").innerText = water + "L";
+}
+    </script>
     <title>Discipline Dashboard</title>
 </head>
 <body>
@@ -18,7 +31,7 @@
     </navbar>
     
               
-    <section class="hero">
+    <section class="hero" id="hero">
    <div class="cont1">
      <img id="laid" src="da.png" alt="">
     <div class="topl"><h1 >BUILT BY DISCIPLINE,
@@ -28,6 +41,19 @@
         <br> <span class="hungry">Stay Hungry, Stay Blessed.</span>
     </p>
     </div>
+    </section>
+    <hr style="color: azure; size: 200vh; position: absolute;top: 100vh;">
+    <section class="progress" id="progress">
+    
+
+        <div class="card">
+  <h3>Water</h3>
+  <p id="waterText">0L</p>
+
+  <button onclick="addWater()">+1L</button>
+  <button onclick="resetWater()">Reset</button>
+    </div>
+
     </section>
 </body>
 </html>
