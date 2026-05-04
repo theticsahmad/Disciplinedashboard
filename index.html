@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
   
     <title>Discipline Dashboard</title>
 </head>
@@ -31,104 +32,14 @@
     </div>
     </section>
     
-    <section class="progress" id="progress">
-        <hr style="color: azure;">
-        <h1 style="position: absolute; top: 20px;left: 35vh;">
-        Track your everyday <span class="fit">Fitness</span> with us!!
-        </h1>
-        <div class="card" id="waterCard">
-    <h3>💧 Water</h3>
-    <p id="waterText">0 L</p>
-    <p id="waterStatus">Not completed</p>
+   <section class="progress">
+     <p>We track your water, </p>
+          <div class="card">
+             
 
-    <button onclick="addWater()">+1L</button>
-    <button onclick="resetWater()">Reset</button>
-  </div>
-
- 
-  <div class="card" id="workout">
-    <h3>🏋 Workout</h3>
-    <h2>Strength Training, Running and any other workout acitivies maybe classified to be toggled </h2>
-    <p id="workoutText">Not done ❌</p>
-
-    <button onclick="toggleWorkout()">Toggle</button>
-  </div>
-
-</div>
-<div style="position: absolute;left: 20vh;" class="card" id="streak">
-  <h3>🔥 Streak</h3>
-  <p id="streakText">0 days</p>
-</div>
-    </section>
+          </div>
+   </section>
+    
 </body>
-  <script>
-    let streak = 0;
-let water = 0;
-let workoutDone = false;
-let goal = 3;
 
-function updateStreak() {
-  let waterOk = water >= goal;
-  let workoutOk = workoutDone;
-
-  let streakText = document.getElementById("streakText");
-  let streakCard = document.getElementById("streakCard");
-
-  if (waterOk && workoutOk) {
-    streak++;
-    streakText.innerText = streak + " days";
-    streakCard.classList.add("good");
-  } else {
-    streak = 0;
-    streakText.innerText = "0 days";
-    streakCard.classList.remove("good");
-  }
-}
-
-function addWater() {
-  water++;
-  document.getElementById("waterText").innerText = water + " L";
-  checkWater();
-  updateStreak();
-}
-
-function resetWater() {
-  water = 0;
-  document.getElementById("waterText").innerText = water + " L";
-  checkWater();
-  updateStreak();
-}
-
-function checkWater() {
-  let status = document.getElementById("waterStatus");
-  let card = document.getElementById("waterCard");
-
-  if (water >= goal) {
-    status.innerText = "Completed ✔";
-    status.style.color = "lime";
-    card.classList.add("good");
-  } else {
-    status.innerText = "Not completed";
-    status.style.color = "red";
-    card.classList.remove("good");
-  }
-}
-
-function toggleWorkout() {
-  workoutDone = !workoutDone;
-
-  let text = document.getElementById("workoutText");
-  let card = document.getElementById("workoutCard");
-
-  if (workoutDone) {
-    text.innerText = "Done ✔";
-    card.classList.add("good");
-  } else {
-    text.innerText = "Not done ❌";
-    card.classList.remove("good");
-  }
-
-  updateStreak();
-}
-    </script>
 </html>
