@@ -157,3 +157,15 @@ h2{
   display: flex;
   margin-top: 10px;
 }
+.habits{
+  position: absolute; top: 25.5in; left:1.4in;
+   padding: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 30px;
+  color: tan;
+
+}
+input{
+  color: pink;
+  background-color: green;
+}
