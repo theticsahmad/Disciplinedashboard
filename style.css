@@ -125,7 +125,7 @@ button {
   background-color: green;
   display: flex;
 }
-.but{
+.but, .w3-light-grey{
   display: flex;
   gap: 10px;
 }
